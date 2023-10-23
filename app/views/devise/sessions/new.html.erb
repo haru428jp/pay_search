@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="form-wrap">
+    <div class="form__wrapper">
+      <h2 class="devise-header">ログイン</h2>
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <div class='login-flash-message'>
+          <%= flash[:notice] %>
+          <%= flash[:alert] %>
+        </div>
+
+        <div class="field">
+          <label class="form-name">メールアドレス</label>
+          <%= f.email_field :email, class:"form-default", id:"user_email", autocomplete: "email" %>
+        </div>
+        <div class="field">
+          <label class="form-name">パスワード</label>
+          <%= f.password_field :password, class:"form-default", id:"user_password", autocomplete: "current-password" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "ログイン", class: :form__btn  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

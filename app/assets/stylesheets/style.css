@@ -34,6 +34,19 @@ a {
   color: #3b4043;
 }
 
+/* エラーメッセージ */
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.error-message {
+  font-size: 16px;
+  list-style: circle;
+  color: red;
+}
+
 /* ヘッダー */
 .header {
   background-color: #8EDAE5;
@@ -67,6 +80,7 @@ a {
 .nav__btn:hover{
   color: #fff;
   background: #F99695;
+  border: 1px solid #F99695;
 }
 
 .nav__logout{
@@ -78,7 +92,7 @@ a {
   user-select: none;
 }
 .nav__logout:hover{
-  opacity: 0.5;
+  color : #676F74;
 }
 
 /* フォーム周り */
@@ -90,31 +104,76 @@ a {
   width: 50%;
 }
 
+.form-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #f5f5f5;
+  border-radius: 3px;
+  background: #f5f5f5;
+  font-size: 16px;
+  resize: none;
+}
+
 .field{
   margin: 10px 0;
 }
 
 .actions{
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 .form__btn{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #fff;
-  text-decoration: none;
-  user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  width: 100%;
+  background: #8EDAE5;
+  border: 1px solid #8EDAE5;
   border-radius: 3px;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
-  transition: 0.2s ease;
+  color: #fff;
+  line-height: 48px;
+  letter-spacing: 3px;
+  font-size: 16px;
+  cursor: pointer;
+
 }
 
-.form__btn:hover {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-  cursor: pointer;
+/* devise */
+.main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrap {
+  width: 50%;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+.devise-header {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.caution {
+  font-size: 12px;
+  color: #FA776D;
+}
+
+.login-flash-message {
+  text-align: center;
+  color: red;
 }
 
 /* メイン 

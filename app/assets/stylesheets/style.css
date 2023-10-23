@@ -92,7 +92,7 @@ a {
   user-select: none;
 }
 .nav__logout:hover{
-  opacity: 0.5;
+  color : #676F74;
 }
 
 /* フォーム周り */

@@ -7,4 +7,6 @@ class User < ApplicationRecord
     validates :name
     validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers' }
   end
+
+  has_many :spots
 end

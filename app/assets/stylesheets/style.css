@@ -176,6 +176,13 @@ a {
   color: red;
 }
 
+/* 新規投稿 */
+.page-heading {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
 /* メイン 
 .greeting{
   margin-bottom: 20px;
@@ -183,10 +190,7 @@ a {
 .greeting__link{
   text-decoration: underline;
 }
-.page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
-}
+
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;

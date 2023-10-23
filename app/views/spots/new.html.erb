@@ -1,1 +1,9 @@
-<h1>新規投稿ページ</h1>
+<div class="main">
+  <div class="form-wrap">
+    <div class="form__wrapper">
+      <h2 class="page-heading">新規プロトタイプ投稿</h2>
+      <%# 部分テンプレートでフォームを表示する %>
+      <%= render partial: "form", locals: { spot: @spot } %>
+    </div>
+  </div>
+</div>

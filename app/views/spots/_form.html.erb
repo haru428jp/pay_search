@@ -1,0 +1,22 @@
+<%= form_with model: spot, local: true do |f| %>
+  <%#= render 'shared/error_messages', model: f.object %>
+
+  <div class="field">
+    <label class="form-name">お店の名前</label>
+    <%= f.text_field :name, class:"form-default", maxlength:"20", id:"spot_name", autofocus: true %>
+  </div>
+  <div class="field">
+    <label class="form-name">住所</label>
+    <%= f.text_field :address, class:"form-default", id:"spot_address" %>
+  </div>
+
+  <%#div class="field">
+    <label class="form-name">お支払い方法</label>
+    <span class="caution">※1つ以上選択してください（複数選択可）</span>
+    <%= f.password_field :password, class:"form-default", id:"" %>
+  <%#/div%>
+
+  <div class="actions">
+    <%= f.submit "登録する", class: :form__btn  %>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
 class Spot < ApplicationRecord
   geocoded_by :address
-  before_validation :geocode, if: :will_save_change_to_address?
+  before_save :geocode_if_address_changed
 
   validate :geocode_must_be_present
 
@@ -16,9 +16,15 @@ class Spot < ApplicationRecord
 
   private
 
+  def geocode_if_address_changed
+    if will_save_change_to_address?
+      geocode
+    end
+  end
+
   def geocode_must_be_present
     if latitude.blank? || longitude.blank?
-      errors.add(:address, "に関する入力をしてください。")
+      errors.add(:address, "に正しい住所を入力してください。")
     end
   end
 

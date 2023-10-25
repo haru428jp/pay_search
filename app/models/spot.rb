@@ -8,6 +8,7 @@ class Spot < ApplicationRecord
     validates :address
     validates :latitude
     validates :longitude
+    validates :tag_ids
   end
 
 end

@@ -10,17 +10,28 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
+    result = Geocoder.search(@spot.address).first
+  
+    if result
+      @spot.latitude = result.latitude
+      @spot.longitude = result.longitude
+    end
+  
     if @spot.save
       redirect_to root_path
     else
-      render :new, status: :unprocessable_entity
+      if result
+        render :new, status: :unprocessable_entity
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
   private
 
   def spot_params
-    params.require(:post).permit(:name, :address, :latitude, :longitude, tag_ids: []).merge(user_id: current_user.id)
+    params.require(:spot).permit(:name, :address, :latitude, :longitude, tag_ids: []).merge(user_id: current_user.id)
   end
   
 end

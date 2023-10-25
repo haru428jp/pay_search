@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_25_031414) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_25_032032) do
+  create_table "spot_tags", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "spot_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_spot_tags_on_spot_id"
+    t.index ["tag_id"], name: "index_spot_tags_on_tag_id"
+  end
+
   create_table "spots", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
@@ -41,5 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_031414) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "spot_tags", "spots"
+  add_foreign_key "spot_tags", "tags"
   add_foreign_key "spots", "users"
 end

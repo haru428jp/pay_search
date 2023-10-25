@@ -1,0 +1,2 @@
+class SpotTag < ApplicationRecord
+end

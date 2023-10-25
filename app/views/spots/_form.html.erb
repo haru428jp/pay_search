@@ -1,5 +1,5 @@
 <%= form_with model: spot, local: true do |f| %>
-  <%#= render 'shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', model: f.object %>
 
   <div class="field">
     <label class="form-name">お店の名前</label>
@@ -10,13 +10,22 @@
     <%= f.text_field :address, class:"form-default", id:"spot_address" %>
   </div>
 
-  <%#div class="field">
-    <label class="form-name">お支払い方法</label>
+  <div class="field">
+    <label class="form-name">使用できるスマホ決済の種類</label>
     <span class="caution">※1つ以上選択してください（複数選択可）</span>
-    <%= f.password_field :password, class:"form-default", id:"" %>
-  <%#/div%>
+    <div class="checkbox-group">
+      <% Tag.all.each do |tag| %>
+        <div class="checkbox">
+          <%= check_box_tag 'spot[tag_ids][]', tag.id, @spot.tag_ids.include?(tag.id), id: "spot_tag_#{tag.id}" %>
+          <%= label_tag "spot_tag_#{tag.id}", tag.name %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
   <div class="actions">
     <%= f.submit "登録する", class: :form__btn  %>
   </div>
 <% end %>
+
+

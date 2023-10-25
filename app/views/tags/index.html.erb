@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="form-wrap">
+    <div class="form__wrapper">
+      <h2 class="page-heading">タグ一覧</h2>
+      <div class="new-tag">
+        <%= link_to "新規登録", new_tag_path, class: :tag_new_btn %>
+      </div>
+      <div class="field">
+        <div class="form-name tag-space">タグの名前</div>
+          <% @tags.each do |tag| %>
+            <div class="tag-field">
+              <div class="tag-name">
+                <%= tag.name %>
+              </div>
+              <div class="tag-edit">
+                <%= link_to "編集", edit_tag_path(tag.id), class: :tag_edit_btn %>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

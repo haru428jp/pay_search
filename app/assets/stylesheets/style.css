@@ -176,6 +176,82 @@ a {
   color: red;
 }
 
+/* 新規投稿 */
+.page-heading {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.checkbox-group {
+  margin-top: 10px;
+}
+
+.checkbox {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* タグページ */
+.tag-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #999;
+  margin-bottom: 3px;
+}
+
+.tag-space {
+  margin: 15px 0;
+}
+
+.tag-name {
+  font-size: 0.9em;
+  display: block;
+  padding: 0.4em 1.0em;
+}
+
+.tag-edit {
+  margin-bottom: 3px;
+}
+
+.new-tag {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.tag_new_btn {
+  text-align: center;
+  display: block;
+  width: 25%;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  letter-spacing: 3px;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background-color: #F99695;
+  border: none;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+
+.tag_edit_btn {
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #676F74;
+  text-decoration: none;
+  user-select: none;
+  background-color: #F0E68C;
+  border: none;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+
 /* メイン 
 .greeting{
   margin-bottom: 20px;
@@ -183,10 +259,7 @@ a {
 .greeting__link{
   text-decoration: underline;
 }
-.page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
-}
+
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;

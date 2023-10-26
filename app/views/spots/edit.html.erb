@@ -1,0 +1,10 @@
+<div class="main">
+  <div class="form-wrap">
+    <div class="form__wrapper">
+      <h2 class="page-heading">投稿編集</h2>
+      <div class="caution">※使用できるスマホ決済の種類を1つも選択しなかった場合は、編集前に選択されている種類が保存されます。<br />
+      ※確認できない住所を入力した場合は、住所は保存されますが、編集前の住所の地図が表示されます。</div>
+      <%= render partial: "form", locals: { spot: @spot } %>
+    </div>
+  </div>
+</div>

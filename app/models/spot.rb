@@ -1,14 +1,14 @@
 class Spot < ApplicationRecord
   geocoded_by :address
-  before_save :geocode_if_address_changed
-
-  validate :geocode_must_be_present
+  before_validation :geocode_if_address_changed
 
   with_options presence: true do
     validates :name
     validates :address
     validates :tag_ids
   end
+
+  validate :geocode_must_be_present
 
   belongs_to :user
   has_many :spot_tags

@@ -39,7 +39,7 @@
       <% if user_signed_in? && current_user.id == @spot.user_id %>
         <div class="show_nav">
           <div class="edit_right">
-              <%= link_to "編集", root_path, class: :show_nav_btn %>
+              <%= link_to "編集", edit_spot_path(@spot.id), class: :show_nav_btn %>
           </div>
         </div>
       <% end %>

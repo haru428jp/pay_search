@@ -1,13 +1,39 @@
-<main class="main">
-  <div class="inner">
-    <%# ログインしているときは以下を表示する %>
-      <%# <div class="greeting"> %>
-        <%# こんにちは、 %>
-        <%# <%= link_to "ユーザー名さん", root_path, class: :greeting__link%>
-      <%# </div> %>
-    <%# // ログインしているときは上記を表示する %>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+<div class="main">
+  <div class="form-wrap">
+    <div class="form__wrapper">
+
+      <% @spots.each do |spot| %>
+        <div class="top-wrap">
+          <h2 class="top-heading">
+            <%= link_to spot.name, spot_path(spot.id) %>
+          </h2>
+
+          <div class="top-field">
+            <label class="form-name"><%= spot.address %></label>
+          </div>
+          
+          <div class="top-field">
+            <label class="form-name">使用できるスマホ決済の種類</label>
+            <ul class="top-tag">
+              <% spot.tags.each do |tag| %>
+                <li>
+                  <div class="tag-item" style="background-color: <%= tag_color(tag.id) %>;">
+                    <%= tag.name %>
+                  </div>
+                </li>
+              <% end %> 
+            </ul>
+          </div>
+
+          <div class="read-field">
+            <div class="read_more">
+              <%= link_to "READ MORE...", spot_path(spot.id) %>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
+
     </div>
   </div>
-</main>
+</div>

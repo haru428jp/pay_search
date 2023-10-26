@@ -299,6 +299,47 @@ a {
   transition: 0.4s ease;
 }
 
+.top-wrap {
+  background-color: #FFF4E1;
+  border-radius: 50px;
+  margin: 50px auto;
+  padding: 30px 0;
+}
+
+.top-heading {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px
+}
+
+.top-field {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.top-tag {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.read-field {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.read_more {
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom: 2px solid #F99695;
+}
+
+.read_more:hover{
+  border-bottom: 2px solid #8EDAE5;
+}
 /* メイン 
 .greeting{
   margin-bottom: 20px;

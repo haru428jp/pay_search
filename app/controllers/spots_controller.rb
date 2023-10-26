@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @spots = Spot.all
@@ -52,6 +52,12 @@ class SpotsController < ApplicationController
         render :edit, status: :unprocessable_entity
       end
     end
+  end
+
+  def destroy
+    @spot.spot_tags.destroy_all
+    @spot.destroy
+    redirect_to root_path
   end
 
   private

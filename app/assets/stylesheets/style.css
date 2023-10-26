@@ -288,6 +288,7 @@ a {
 .show_nav_btn{
   display: inline-block;
   padding: 0.4em 1.6em;
+  margin-right: 0.5em;
   font-size: 0.8em;
   color: #3b4043;
   text-decoration: none;
@@ -295,6 +296,20 @@ a {
   user-select: none;
   border: 1px solid #F0E68C;
   background-color: #F0E68C;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.delete_nav_btn {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #3b4043;
+  text-decoration: none;
+  letter-spacing: 2px;
+  user-select: none;
+  border: 1px solid #F99695;
+  background-color: #F99695;
   border-radius: 3px;
   transition: 0.4s ease;
 }

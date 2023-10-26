@@ -41,6 +41,9 @@
           <div class="edit_right">
               <%= link_to "編集", edit_spot_path(@spot.id), class: :show_nav_btn %>
           </div>
+          <div class="edit_right">
+              <%= link_to "削除", spot_path(@spot.id), data: { turbo_method: :delete }, class: :delete_nav_btn %>
+          </div>
         </div>
       <% end %>
     </div>

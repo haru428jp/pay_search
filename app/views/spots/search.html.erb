@@ -1,7 +1,6 @@
 <div class="main">
   <div class="form-wrap">
     <div class="form__wrapper">
-
       <%= form_with(url: search_spots_path, local: true, method: :get, class: "search-form") do |form| %>
         <%= form.text_field :keyword, placeholder: "お店の名前から検索する", class: "search-input" %>
         <%= form.submit "検索", class: "search-btn" %>
@@ -40,7 +39,6 @@
 
         </div>
       <% end %>
-
     </div>
   </div>
 </div>

@@ -61,6 +61,10 @@ class SpotsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @spots = Spot.search(params[:keyword])
+  end
+
   private
 
   def spot_params

@@ -14,6 +14,14 @@ class Spot < ApplicationRecord
   has_many :spot_tags
   has_many :tags, through: :spot_tags
 
+  def self.search(search)
+    if search != ""
+      Spot.where('name LIKE(?)', "%#{search}%")
+    else
+      Spot.all
+    end
+  end
+
   private
 
   def geocode_if_address_changed

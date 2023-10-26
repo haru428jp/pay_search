@@ -3,7 +3,7 @@ class SpotsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @spots = Spot.all
+    @spots = Spot.includes(:user).order("created_at DESC")
   end
 
   def new

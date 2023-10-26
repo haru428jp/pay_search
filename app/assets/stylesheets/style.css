@@ -335,6 +335,7 @@ a {
 .top-tag {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .read-field {

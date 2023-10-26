@@ -11,12 +11,10 @@
           <h2 class="top-heading">
             <%= link_to spot.name, spot_path(spot.id) %>
           </h2>
-
           <div class="top-field">
             <i class="fa-solid fa-location-dot" style="color: #8EDAE5;"></i>
             <label class="form-name"><%= spot.address %></label>
           </div>
-          
           <div class="top-field">
             <i class="fa-solid fa-barcode" style="color: #8EDAE5;"></i>
             <label class="form-name">使用できるスマホ決済の種類</label>
@@ -30,15 +28,14 @@
               <% end %> 
             </ul>
           </div>
-
           <div class="read-field">
             <div class="read_more">
               <%= link_to "READ MORE...", spot_path(spot.id) %>
             </div>
           </div>
-
         </div>
       <% end %>
+      
     </div>
   </div>
 </div>

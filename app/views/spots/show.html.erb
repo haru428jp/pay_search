@@ -2,8 +2,8 @@
   <div class="form-wrap">
     <div class="form__wrapper">
       <h2 class="page-heading"><%= @spot.name %></h2>
-
       <div class="show_field">
+        <i class="fa-solid fa-barcode" style="color: #8EDAE5;"></i>
         <label class="form-name">使用できるスマホ決済の種類</label>
         <ul class="show-tag">
           <% @spot.tags.each do |tag| %>
@@ -15,8 +15,8 @@
           <% end %> 
         </ul>
       </div>
-
       <div class="show_field">
+        <i class="fa-solid fa-location-dot" style="color: #8EDAE5;"></i>
         <label class="form-name"><%= @spot.address %></label>
       </div>
       <div class="show_field">
@@ -35,7 +35,6 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
       </div>
-
       <% if user_signed_in? && current_user.id == @spot.user_id %>
         <div class="show_nav">
           <div class="edit_right">

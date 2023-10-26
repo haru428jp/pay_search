@@ -1,7 +1,6 @@
 <div class="main">
   <div class="form-wrap">
     <div class="form__wrapper">
-
       <%= form_with(url: search_spots_path, local: true, method: :get, class: "search-form") do |form| %>
         <%= form.text_field :keyword, placeholder: "お店の名前から検索する", class: "search-input" %>
         <%= form.submit "検索", class: "search-btn" %>
@@ -12,12 +11,10 @@
           <h2 class="top-heading">
             <%= link_to spot.name, spot_path(spot.id) %>
           </h2>
-
           <div class="top-field">
             <i class="fa-solid fa-location-dot" style="color: #8EDAE5;"></i>
             <label class="form-name"><%= spot.address %></label>
           </div>
-          
           <div class="top-field">
             <i class="fa-solid fa-barcode" style="color: #8EDAE5;"></i>
             <label class="form-name">使用できるスマホ決済の種類</label>
@@ -31,13 +28,11 @@
               <% end %> 
             </ul>
           </div>
-
           <div class="read-field">
             <div class="read_more">
               <%= link_to "READ MORE...", spot_path(spot.id) %>
             </div>
           </div>
-
         </div>
       <% end %>
 

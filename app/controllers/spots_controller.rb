@@ -77,7 +77,9 @@ class SpotsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path if current_user.id != @spot.user_id
+    unless current_user.id == @spot.user_id || current_user.admin?
+      redirect_to root_path
+    end
   end
   
 end

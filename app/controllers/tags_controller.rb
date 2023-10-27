@@ -1,4 +1,8 @@
 class TagsController < ApplicationController
+  load_and_authorize_resource
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path
+  end
   
   def index
     @tags = Tag.all

@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @spots = Spot.includes(:user).order("created_at DESC")
@@ -73,6 +74,10 @@ class SpotsController < ApplicationController
 
   def set_item
     @spot = Spot.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to root_path if current_user.id != @spot.user_id
   end
   
 end

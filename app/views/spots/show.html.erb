@@ -20,7 +20,7 @@
         <label class="form-name"><%= @spot.address %></label>
       </div>
 
-      <div class="show_field map_bottom">
+      <div class="show_field">
         <div id="map"></div>
         <script>
           function initMap() {
@@ -38,7 +38,7 @@
       </div>
 
       <% if user_signed_in? && (current_user.id == @spot.user_id || current_user.admin?) %>
-        <div class="show_nav">
+        <div class="show_nav map_bottom">
           <div class="edit_right">
               <%= link_to "編集", edit_spot_path(@spot.id), class: :show_nav_btn %>
           </div>

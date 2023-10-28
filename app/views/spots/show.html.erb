@@ -20,9 +20,7 @@
         <label class="form-name"><%= @spot.address %></label>
       </div>
 
-<% 
-=begin %>
-      <div class="show_field">
+      <div class="show_field map_bottom">
         <div id="map"></div>
         <script>
           function initMap() {
@@ -38,8 +36,6 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
       </div>
-<% 
-=end %>
 
       <% if user_signed_in? && (current_user.id == @spot.user_id || current_user.admin?) %>
         <div class="show_nav">

@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   before do
     @user = FactoryBot.create(:user)
-    @spot = FactoryBot.create(:spot)
+    @tag = FactoryBot.create(:tag)
+    @spot = FactoryBot.create(:spot, user_id: @user.id, tag_ids: [@tag.id])
     @comment = FactoryBot.build(:comment, user_id: @user.id, spot_id: @spot.id)
   end
 
@@ -16,9 +17,9 @@ RSpec.describe Comment, type: :model do
 
     context 'コメント登録できない場合' do
       it 'commentが空では登録できない' do
-        @comment.name = ''
+        @comment.comment = ''
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Comment can't be blank")
+        expect(@comment.errors.full_messages).to include("Commentを入力してください")
       end
     end
   end

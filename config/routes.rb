@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     end
   end
   resources :tags, only: [:index, :new, :create, :edit, :update]
+  resources :users, only: :show
 end

@@ -346,6 +346,7 @@ a {
 .sb-box {
   position: relative;
   overflow: hidden;
+  margin: 10px 0;
 }
 /* アイコン画像 */
 .icon-img {

@@ -53,17 +53,6 @@
       <% end %>
 
       <div class="show_field">
-        <% if user_signed_in? %>
-          <%= form_with(model:[@spot, @comment], local: true) do |f|%>
-            <div class="field">
-              <%= f.text_area :comment, placeholder: "コメントする", rows: "3", class:"comment-form", id:"comment_content" %>
-            </div>
-            <div class="comment_action">
-              <%= f.submit "コメントを送信する", class: :comment_btn %>
-            </div>
-          <% end %>
-        <% end %>
-
         <% @comments.each do |comment| %>
           <div class="sb-box">
             <div class="icon-img icon-img-left">
@@ -79,6 +68,22 @@
                 </div>
               </div>
             </div>
+          </div>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <%= form_with(model:[@spot, @comment], local: true) do |f|%>
+            <div class="field">
+              <%= f.text_area :comment, placeholder: "コメントする", rows: "3", class:"comment-form", id:"comment_content" %>
+            </div>
+            <div class="comment_action">
+              <%= f.submit "コメントを送信する", class: :comment_btn %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="caution">
+            <i class="fa-solid fa-circle-exclamation" style="color: #F99695;"></i>
+            コメントの投稿にはログインが必要です。
           </div>
         <% end %>
       </div>

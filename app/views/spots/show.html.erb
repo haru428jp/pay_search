@@ -19,7 +19,6 @@
         <i class="fa-solid fa-location-dot" style="color: #8EDAE5;"></i>
         <label class="form-name"><%= @spot.address %></label>
       </div>
-
       <div class="show_field">
         <div id="map"></div>
         <script>
@@ -38,7 +37,7 @@
       </div>
 
       <% if user_signed_in? && (current_user.id == @spot.user_id || current_user.admin?) %>
-        <div class="show_nav map_bottom">
+        <div class="show_nav">
           <div class="edit_right">
               <%= link_to "編集", edit_spot_path(@spot.id), class: :show_nav_btn %>
           </div>
@@ -47,7 +46,7 @@
           </div>
         </div>
       <% end %>
-
+      <div class="map_bottom"></div>
       <div class="show_field">
         <% @comments.each do |comment| %>
           <div class="sb-box">
@@ -66,7 +65,6 @@
             </div>
           </div>
         <% end %>
-
         <% if user_signed_in? %>
           <%= form_with(model:[@spot, @comment], local: true) do |f|%>
             <%= render 'shared/error_messages', model: f.object %>
@@ -87,5 +85,3 @@
     </div>
   </div>
 </div>
-
-

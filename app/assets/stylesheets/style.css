@@ -315,6 +315,110 @@ a {
   transition: 0.4s ease;
 }
 
+.comment-form {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #f5f5f5;
+  border-radius: 3px;
+  background: #f5f5f5;
+  font-size: 14px;
+  color: #3b4043;
+}
+
+.comment_btn {
+  width: 100%;
+  background: #8EDAE5;
+  border: 1px solid #8EDAE5;
+  border-radius: 3px;
+  color: #fff;
+  line-height: 31px;
+  letter-spacing: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.comment_action {
+  margin: 10px 0;
+}
+
+/* ふきだし全体 */
+.sb-box {
+  position: relative;
+  overflow: hidden;
+}
+/* アイコン画像 */
+.icon-img {
+  position: absolute;
+  overflow: hidden;
+  top: 0; /* 画像の位置を上から0に */
+  width: 65px; /* 画像の幅 */
+  height: 65px; /* 画像の高さ */
+}
+/* アイコン画像（左） */
+.icon-img-left {
+  left: 0; /* 画像の位置を左から0に */
+}
+/* アイコン画像 */
+.icon-img img {
+  border-radius: 50%; /* 画像を丸く表示する */
+  border: 1px solid #eee; /* 画像の縁取りの太さとカラー */
+}
+
+.comment_name {
+  text-align: right;
+}
+/* 吹き出し */
+.sb-side {
+  position: relative;
+  float: left;
+  margin-left: 80px; /* 吹き出しの上下左右の余白 */
+}
+.sb-side-right {
+  float: right;
+}
+/* 吹き出し内のテキスト */
+.sb-txt {
+  position: relative;
+  border: 1px solid #FFF4E1; /* 吹き出しの縁取りの太さとカラー */
+  border-radius: 6px; /* 吹き出しを角丸に */
+  background: #FFF4E1; /* 吹き出しの背景色 */
+  font-size: 13px; /* 吹き出し内のフォントサイズ */
+  line-height: 1.7; /* 吹き出し内のテキストが2行以上になった時の行間 */
+  padding: 5px; /* 吹き出し内の上下左右の余白 */
+}
+.sb-txt > p:last-of-type {
+  padding-bottom: 0; /* 吹き出し内のテキストを改行した場合、最後のpタグにpadding-bottomをつけない */
+  margin-bottom: 0; /* 吹き出し内のテキストを改行した場合、最後のpタグにmargin-bottomをつけない */
+}
+/* 吹き出しの三角 */
+.sb-txt:before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  top: 16px; /* 吹き出し内の三角の位置 */
+  z-index: 3;
+}
+.sb-txt:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  top: 15px; /* beforeより-1px */
+  z-index: 2; /* beforeより-1 */
+}
+/* 吹き出しの三角（左） */
+.sb-txt-left:before {
+  left: -7px;
+  border-width: 7px 10px 7px 0;
+  border-color: transparent #FFF4E1 transparent transparent; /* 背景色と同じカラーに */
+}
+.sb-txt-left:after {
+  left: -10px; /* beforeより-3px */
+  border-width: 8px 10px 8px 0; /* beforeより上下+1px */
+  border-color: transparent #FFF4E1 transparent transparent; /* 縁取りと同じカラーに */
+}
+
+/* トップページ */
 .top-wrap {
   background-color: #FFF4E1;
   border-radius: 50px;

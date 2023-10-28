@@ -32,6 +32,8 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @spot.comments.includes(:user)
   end
 
   def edit

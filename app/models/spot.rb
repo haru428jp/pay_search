@@ -11,6 +11,7 @@ class Spot < ApplicationRecord
   validate :geocode_must_be_present
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
   has_many :spot_tags
   has_many :tags, through: :spot_tags
 

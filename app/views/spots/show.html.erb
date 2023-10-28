@@ -19,7 +19,8 @@
         <i class="fa-solid fa-location-dot" style="color: #8EDAE5;"></i>
         <label class="form-name"><%= @spot.address %></label>
       </div>
-      <div class="show_field">
+
+      <div class="show_field map_bottom">
         <div id="map"></div>
         <script>
           function initMap() {
@@ -35,6 +36,7 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
       </div>
+
       <% if user_signed_in? && (current_user.id == @spot.user_id || current_user.admin?) %>
         <div class="show_nav">
           <div class="edit_right">
@@ -45,7 +47,45 @@
           </div>
         </div>
       <% end %>
+
+      <div class="show_field">
+        <% @comments.each do |comment| %>
+          <div class="sb-box">
+            <div class="icon-img icon-img-left">
+              アイコン
+            </div>
+            <div class="sb-side sb-side-left">
+              <div class="sb-txt sb-txt-left">
+                <div>
+                    <%= comment.comment %>
+                </div>
+                <div class="comment_name">
+                  <strong><%= comment.user.name %>（<%= l comment.updated_at %>）</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <%= form_with(model:[@spot, @comment], local: true) do |f|%>
+            <%= render 'shared/error_messages', model: f.object %>
+            <div class="field">
+              <%= f.text_area :comment, placeholder: "コメントする", rows: "3", class:"comment-form", id:"comment_content" %>
+            </div>
+            <div class="comment_action">
+              <%= f.submit "コメントを送信する", class: :comment_btn %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="caution">
+            <i class="fa-solid fa-circle-exclamation" style="color: #F99695;"></i>
+            コメントの投稿にはログインが必要です。
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
 

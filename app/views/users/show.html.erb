@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="form-wrap">
+    <div class="form__wrapper">
+      <h2 class="page-heading"><%= @name %>さんのマイページ</h2>
+        <div class="my_field">
+          <label class="form-name">ユーザー名：<%= @name %></label>
+          <div class="my_nav">
+            <div class="edit_right">
+                <%= link_to "編集", root_path, class: :show_nav_btn %>
+            </div>
+            <div class="edit_right">
+                <%= link_to "削除", root_path, class: :delete_nav_btn %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

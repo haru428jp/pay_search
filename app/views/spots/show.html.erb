@@ -69,6 +69,7 @@
 
         <% if user_signed_in? %>
           <%= form_with(model:[@spot, @comment], local: true) do |f|%>
+            <%= render 'shared/error_messages', model: f.object %>
             <div class="field">
               <%= f.text_area :comment, placeholder: "コメントする", rows: "3", class:"comment-form", id:"comment_content" %>
             </div>

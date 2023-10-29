@@ -530,8 +530,7 @@ a {
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  border: 1px solid #FFF4E1;
-  background-color: #FFF4E1;
+  border: 1px solid #8EDAE5;
 }
 
 .click-upload {

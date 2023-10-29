@@ -95,6 +95,7 @@ a {
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
+  margin-right: 1.6em;
   font-size: 0.8em;
   color: #fff;
   text-decoration: none;
@@ -120,6 +121,15 @@ a {
 }
 .nav__logout:hover{
   color : #676F74;
+}
+
+.default_top_icon{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #FFF4E1;
+  background-color: #FFF4E1;
 }
 
 /* フォーム周り */

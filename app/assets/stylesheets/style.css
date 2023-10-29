@@ -511,6 +511,19 @@ a {
   justify-content: center;
 }
 
+.my_icon {
+  padding-bottom: 10px;
+}
+
+.default_icon{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #FFF4E1;
+  background-color: #FFF4E1;
+}
+
 /* メイン 
 .greeting{
   margin-bottom: 20px;

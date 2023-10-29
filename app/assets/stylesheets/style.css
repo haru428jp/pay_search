@@ -356,57 +356,60 @@ a {
   margin: 10px 0;
 }
 
-/* ふきだし全体 */
 .sb-box {
   position: relative;
   overflow: hidden;
   margin: 10px 0;
+  padding-bottom: 5px;
 }
-/* アイコン画像 */
+
 .icon-img {
   position: absolute;
   overflow: hidden;
-  top: 0; /* 画像の位置を上から0に */
-  width: 65px; /* 画像の幅 */
-  height: 65px; /* 画像の高さ */
+  top: 0;
 }
-/* アイコン画像（左） */
+
 .icon-img-left {
-  left: 0; /* 画像の位置を左から0に */
+  left: 0;
 }
-/* アイコン画像 */
-.icon-img img {
-  border-radius: 50%; /* 画像を丸く表示する */
-  border: 1px solid #eee; /* 画像の縁取りの太さとカラー */
+
+.default_show_icon{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #8EDAE5;
 }
 
 .comment_name {
   text-align: right;
 }
-/* 吹き出し */
+
 .sb-side {
   position: relative;
   float: left;
-  margin-left: 80px; /* 吹き出しの上下左右の余白 */
+  margin-left: 80px;
 }
+
 .sb-side-right {
   float: right;
 }
-/* 吹き出し内のテキスト */
+
 .sb-txt {
   position: relative;
-  border: 1px solid #FFF4E1; /* 吹き出しの縁取りの太さとカラー */
-  border-radius: 6px; /* 吹き出しを角丸に */
-  background: #FFF4E1; /* 吹き出しの背景色 */
-  font-size: 13px; /* 吹き出し内のフォントサイズ */
-  line-height: 1.7; /* 吹き出し内のテキストが2行以上になった時の行間 */
-  padding: 5px; /* 吹き出し内の上下左右の余白 */
+  border: 1px solid #FFF4E1;
+  border-radius: 6px;
+  background: #FFF4E1;
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 5px;
 }
+
 .sb-txt > p:last-of-type {
-  padding-bottom: 0; /* 吹き出し内のテキストを改行した場合、最後のpタグにpadding-bottomをつけない */
-  margin-bottom: 0; /* 吹き出し内のテキストを改行した場合、最後のpタグにmargin-bottomをつけない */
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
-/* 吹き出しの三角 */
+
 .sb-txt:before {
   content: "";
   position: absolute;
@@ -418,19 +421,19 @@ a {
   content: "";
   position: absolute;
   border-style: solid;
-  top: 15px; /* beforeより-1px */
-  z-index: 2; /* beforeより-1 */
+  top: 15px;
+  z-index: 2;
 }
-/* 吹き出しの三角（左） */
+
 .sb-txt-left:before {
   left: -7px;
   border-width: 7px 10px 7px 0;
-  border-color: transparent #FFF4E1 transparent transparent; /* 背景色と同じカラーに */
+  border-color: transparent #FFF4E1 transparent transparent;
 }
 .sb-txt-left:after {
-  left: -10px; /* beforeより-3px */
-  border-width: 8px 10px 8px 0; /* beforeより上下+1px */
-  border-color: transparent #FFF4E1 transparent transparent; /* 縁取りと同じカラーに */
+  left: -10px;
+  border-width: 8px 10px 8px 0;
+  border-color: transparent #FFF4E1 transparent transparent;
 }
 
 /* トップページ */
@@ -537,159 +540,7 @@ a {
   margin-top: 5px;
 }
 
-/* メイン 
-.greeting{
-  margin-bottom: 20px;
-}
-.greeting__link{
-  text-decoration: underline;
-}
-
-.card__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  min-height: calc(100vh - 161px);
-}
-.card {
-  width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
-}
-.card__img {
-  margin-bottom: 16px;
-}
-.card__title {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-.card__summary {
-  font-size: 16px;
-}
-.card__user {
-  display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
-}
-
-*/
-
-/* 詳細ページ 
-.prototype__wrapper{
-  min-height: calc(100vh - 161px);
-}
-.prototype__hedding{
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-.prototype__user{
-  display: block;
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  text-decoration: underline;
-}
-.prototype__image{
-  width: 40%;
-  margin: 0 auto;
-  padding: 16px 0;
-}
-.prototype__detail{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 8px;
-}
-.detail__title{
-  font-size: 20px;
-  font-weight: bold;
-}
-.prototype__manage{
-  display: flex;
-  justify-content: center;
-  padding-top: 16px;
-}
-.prototype__btn{
-  display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #999;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #999 solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-  margin: 0 4px;
-}
-.prototype__btn:hover{
-  color: #fff;
-  background: #999;
-}
-
-.prototype__comments{
-  background-color: #f6f6f6;
-  padding: 20px;
-  margin: 28px 0 40px 0;
-}
-
-.comments_lists{
-  padding-left: 20px;
-}
-
-.comments_list{
-  list-style-type: square;
-  padding-bottom: 5px;
-}
-
-.comment_user{
-  font-size: 16px;
-  color: #999;
-  text-decoration: underline;
-}
-
-*/
-
-/* ユーザーページ 
-.user__wrapper{
-  min-height: calc(100vh - 161px);
-}
-.table{
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-}
-.table__col1{
-  text-align: left;
-  font-weight: bold;
-  background: #fafafa;
-  border-collapse: collapse;
-  border: 1px solid #f5f5f5;
-  width: 30%;
-  padding: 8px;
-}
-.table__col2{
-  text-align: left;
-  border: 1px solid #f5f5f5;
-  border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
-}
-.user__card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-*/
-
 /* フッター */
-
 .footer {
   background-color: #8EDAE5;
   padding: 10px 0;

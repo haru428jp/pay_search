@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="form-wrap">
+    <div class="form__wrapper">
+      <h2 class="page-heading"><%= @user.name %>さんのマイページ</h2>
+        <div class="my_field">
+          <div class="my_icon">
+            <% if @user.image.attached? %>
+              <%= image_tag @user.image.variant(resize: '100') %>
+            <% else %>
+              <%= image_tag 'icon.jpg', class: :default_icon %>
+            <% end %>
+          </div>
+          <label class="form-name"><%= @user.name %></label>
+          <div class="my_nav">
+            <div class="edit_right">
+                <%= link_to "編集", edit_user_registration_path, class: :show_nav_btn %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

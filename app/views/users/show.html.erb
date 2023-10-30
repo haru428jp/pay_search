@@ -16,6 +16,13 @@
                 <%= link_to "編集", edit_user_registration_path, class: :show_nav_btn %>
             </div>
           </div>
+          <% if current_user.admin? %>
+            <div class="my_nav">
+              <div class="edit_right">
+                  <%= link_to "タグ一覧ページ", tags_path, class: :show_nav_btn %>
+              </div>
+            </div>
+          <% end %>
         </div>
     </div>
   </div>

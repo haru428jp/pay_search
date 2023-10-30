@@ -5,7 +5,7 @@
         <div class="my_field">
           <div class="my_icon">
             <% if @user.image.attached? %>
-              <%= image_tag @user.image.variant(resize: '100') %>
+              <%= image_tag @user.image.variant(resize: '100'), class: :icon %>
             <% else %>
               <%= image_tag 'icon.jpg', class: :default_icon %>
             <% end %>

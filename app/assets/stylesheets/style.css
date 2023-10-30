@@ -533,6 +533,11 @@ a {
   padding-bottom: 10px;
 }
 
+.icon {
+  border: none;
+  border-radius: 50%;
+}
+
 .default_icon{
   width: 100px;
   height: 100px;

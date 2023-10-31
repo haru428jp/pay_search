@@ -12,3 +12,13 @@ ja:
         current_password: "現在のパスワード"
       tag:
         name: "タグの名前"
+      spot:
+        name: "お店の名前"
+        address: "お店の住所"
+        tag_ids: "使用できるスマホ決済の種類"
+    errors:
+      models:
+        spot:
+          attributes:
+            tag_ids:
+              blank: "は、1つ以上選択してください"

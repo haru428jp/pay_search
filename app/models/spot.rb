@@ -33,7 +33,7 @@ class Spot < ApplicationRecord
 
   def geocode_must_be_present
     if latitude.blank? || longitude.blank?
-      errors.add(:address, "に正しい住所を入力してください。")
+      errors.add(:address, "は正しい情報を入力してください")
     end
   end
 

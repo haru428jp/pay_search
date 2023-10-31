@@ -16,64 +16,64 @@ RSpec.describe User, type: :model do
       it 'nameが空では登録できない' do
         @user.name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Nameを入力してください")
       end
       it 'emailが空では登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email can't be blank")
+        expect(@user.errors.full_messages).to include("Emailを入力してください")
       end
       it '重複したemailが存在する場合は登録できない' do
         @user.save
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include('Email has already been taken')
+        expect(another_user.errors.full_messages).to include('Emailはすでに存在します')
       end
       it 'emailは@を含まないと登録できない' do
         @user.email = 'test'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Email is invalid')
+        expect(@user.errors.full_messages).to include('Emailは不正な値です')
       end
       it 'passwordが空では登録できない' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password can't be blank")
+        expect(@user.errors.full_messages).to include("Passwordを入力してください")
       end
       it 'passwordとpassword_confirmationが不一致では登録できない' do
         @user.password = 'sample1'
         @user.password_confirmation = 'sample2'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        expect(@user.errors.full_messages).to include("Password confirmationとPasswordの入力が一致しません")
       end
       it 'passwordが7文字以下では登録できない' do
         @user.password = 'abc1234'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password is too short (minimum is 8 characters)')
+        expect(@user.errors.full_messages).to include('Passwordは8文字以上で入力してください')
       end
       it 'passwordが129文字以上では登録できない' do
         @user.password = Faker::Internet.password(min_length: 129, max_length: 150)
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password is too long (maximum is 128 characters)')
+        expect(@user.errors.full_messages).to include('Passwordは128文字以内で入力してください')
       end
       it 'passwordは半角数字のみの場合登録できない' do
         @user.password = '12345678'
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password is invalid. Include both letters and numbers')
+        expect(@user.errors.full_messages).to include('Passwordis invalid. Include both letters and numbers')
       end
       it 'passwordは半角英字のみの場合登録できない' do
         @user.password = 'abcdefgh'
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password is invalid. Include both letters and numbers')
+        expect(@user.errors.full_messages).to include('Passwordis invalid. Include both letters and numbers')
       end
       it 'passwordは半角英数字以外が含まれている場合登録できない' do
         @user.password = '12abあいうえ'
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password is invalid. Include both letters and numbers')
+        expect(@user.errors.full_messages).to include('Passwordis invalid. Include both letters and numbers')
       end
     end
   end

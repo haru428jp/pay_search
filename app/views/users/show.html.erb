@@ -15,6 +15,9 @@
             <div class="edit_right">
                 <%= link_to "編集", edit_user_registration_path, class: :show_nav_btn %>
             </div>
+            <div class="edit_right">
+                <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: :delete_nav_btn %>
+            </div>
           </div>
           <% if current_user.admin? %>
             <div class="my_nav">

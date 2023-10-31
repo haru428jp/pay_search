@@ -10,3 +10,5 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         current_password: "現在のパスワード"
+      tag:
+        name: "タグの名前"

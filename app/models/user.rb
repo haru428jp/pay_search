@@ -5,7 +5,7 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
   with_options presence: true do
     validates :name
-    validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers' }
+    validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は半角英字と半角数字の両方を含めてください' }
   end
 
   has_one_attached :image

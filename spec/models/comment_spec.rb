@@ -19,7 +19,7 @@ RSpec.describe Comment, type: :model do
       it 'commentが空では登録できない' do
         @comment.comment = ''
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Commentを入力してください")
+        expect(@comment.errors.full_messages).to include("コメントを入力してください")
       end
     end
   end

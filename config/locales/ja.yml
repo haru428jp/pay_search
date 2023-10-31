@@ -10,6 +10,8 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         current_password: "現在のパスワード"
+      comment:
+        comment: "コメント"
       tag:
         name: "タグの名前"
       spot:

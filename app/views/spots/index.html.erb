@@ -5,7 +5,8 @@
         <%= form.text_field :keyword, placeholder: "お店の名前から検索する", class: "search-input" %>
         <%= form.submit "検索", class: "search-btn" %>
       <% end %>
-
+      <%= link_to '▼ 新着コメント順', spots_path(sort: 'new_comments'), class: :sort_btn %>
+      <%= link_to '▼ 新着投稿順', spots_path, class: :sort_btn %>
       <% @spots.each do |spot| %>
         <div class="top-wrap">
           <h2 class="top-heading">

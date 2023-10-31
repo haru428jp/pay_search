@@ -407,7 +407,7 @@ a {
   content: "";
   position: absolute;
   border-style: solid;
-  top: 16px; /* 吹き出し内の三角の位置 */
+  top: 16px;
   z-index: 3;
 }
 .sb-txt:after {
@@ -473,9 +473,29 @@ a {
   border-bottom: 2px solid #8EDAE5;
 }
 
+.sort_btn {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  margin-right: 1.6em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background-color: #8EDAE5;
+  border: none;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.sort_btn:hover {
+  color: #fff;
+  background: #F99695;
+}
+
 /* 検索 */
 .search-form {
   text-align: center;
+  margin-bottom: 45px;
 }
 
 .search-form .search-input {

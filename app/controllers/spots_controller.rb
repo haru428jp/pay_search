@@ -4,7 +4,11 @@ class SpotsController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
-    @spots = Spot.includes(:user).order("created_at DESC")
+    if params[:sort] == 'new_comments'
+      @spots = Spot.includes([:comments,:user]).order('comments.created_at DESC')
+    else
+      @spots = Spot.includes([:comments,:user]).order('created_at DESC')
+    end
   end
 
   def new

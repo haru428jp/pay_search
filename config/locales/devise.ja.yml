@@ -1,0 +1,6 @@
+ja:
+  devise:
+    failure:
+      invalid: "%{authentication_keys} もしくはパスワードが不正です。"
+    sessions:
+      signed_out: 'ログアウトしました。'

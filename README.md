@@ -8,10 +8,10 @@ Pay Search
 https://pay-search.onrender.com
 
 ## テスト用アカウント
-<li>Basic認証ID：</li>
-<li>Basic認証パスワード：</li>
-<li>メールアドレス：</li>
-<li>パスワード：</li>
+<li>Basic認証ID：admin</li>
+<li>Basic認証パスワード：1234</li>
+<li>メールアドレス：test@test.com</li>
+<li>パスワード：test1234</li>
 
 ## 利用方法
 ログインなしでもトップページと投稿の詳細確認、検索機能はご利用いただけます。
@@ -77,17 +77,39 @@ https://pay-search.onrender.com
 困りごとを分析した結果、「毎回店舗ごとに調べるのも大変で、ホームページを持たない店舗では事前に調べることもできない」ことが問題であると仮説を立てました。<br>
 同様の問題を抱えている方も多いと推測し、問題を解決するために、ユーザー同士でお店が対応しているスマホ決済情報を共有できるアプリケーションを開発することにしました。
 
-## 実装した機能についての画像やGIFおよびその説明
+## 実装した機能についてのGIF
+<details>
+<summary>新規投稿・詳細確認</summary>
+<img src="https://i.gyazo.com/a3d3d8e5122bd7506988106a22045f34.gif">
+</details>
+<details>
+<summary>検索</summary>
+<img src="https://i.gyazo.com/0b086b7b23eaa3ef04bea5889fe0b81e.gif">
+</details>
+<details>
+<summary>コメント投稿</summary>
+<img src="https://i.gyazo.com/7cc3017ef549eb988af2622a0c333aef.gif">
+</details>
+<details>
+<summary>投稿一覧の表示順変更</summary>
+<img src="https://i.gyazo.com/8b749537610c88a73e67821ec233b1e7.gif">
+</details>
+<details>
+<summary>マイページ機能（ユーザー情報編集）</summary>
+<img src="https://i.gyazo.com/adbf68533b84e5066def6d6cdf39ec55.gif">
+</details>
 
 ## 実装予定の機能
-<li>お気に入り登録機能</li>
+<li>ページネーション機能</li>
+<li>お気に入り登録機能　※ 必要か要検討</li>
 <li>お問い合わせフォーム</li>
-※ 必要機能なのか要検討
+
 
 ## データベース設計
 <img src ="https://i.gyazo.com/890b182d163b97cd9adafcbf553b01a0.png">
 
 ## 画面遷移図
+<img src ="https://i.gyazo.com/482acce1ba8d4302f56e0da1ddda4d21.png">
 
 ## 開発環境
 <li>macOS Ventura 13.5.1</li>

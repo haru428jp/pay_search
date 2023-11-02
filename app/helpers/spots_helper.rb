@@ -3,29 +3,29 @@ module SpotsHelper
   def tag_color(tag_id)
     case tag_id
     when 1
-      "#FB0032" #PayPay
+      '#FB0032' # PayPay
     when 2
-      "#BF0000" #楽天Pay
+      '#BF0000' # 楽天Pay
     when 3
-      "#CC0134" #d払い
+      '#CC0134' # d払い
     when 4
-      "#28C34E" #LINE Pay
+      '#28C34E' # LINE Pay
     when 5
-      "#EB5605" #au PAY
+      '#EB5605' # au PAY
     when 6
-      "#E4C402" #iD
+      '#E4C402' # iD
     when 7
-      "#0E1F87" #QUICPAY
+      '#0E1F87' # QUICPAY
     when 8
-      "#58B531" #Suica
+      '#58B531' # Suica
     when 9
-      "#1433CB" #VISA
+      '#1433CB' # VISA
     when 10
-      "#EB5E14" #Master
+      '#EB5E14' # Master
     when 11
-      "#0D1434" #JCB
+      '#0D1434' # JCB
     else
-      "#CCCCCC"
+      '#CCCCCC'
     end
   end
 end

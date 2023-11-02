@@ -1,9 +1,9 @@
 class TagsController < ApplicationController
   load_and_authorize_resource
-  rescue_from CanCan::AccessDenied do |exception|
+  rescue_from CanCan::AccessDenied do |_exception|
     redirect_to root_path
   end
-  
+
   def index
     @tags = Tag.all
   end
@@ -39,5 +39,4 @@ class TagsController < ApplicationController
   def tag_params
     params.require(:tag).permit(:name)
   end
-
 end

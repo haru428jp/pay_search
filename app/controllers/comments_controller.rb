@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     @comment = Comment.create(comment_params)
     if @comment.save
@@ -7,7 +6,7 @@ class CommentsController < ApplicationController
     else
       @spot = @comment.spot
       @comments = @spot.comments.includes(:user)
-      render "spots/show", status: :unprocessable_entity
+      render 'spots/show', status: :unprocessable_entity
     end
   end
 
@@ -16,5 +15,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:comment).merge(user_id: current_user.id, spot_id: params[:spot_id])
   end
-
 end

@@ -4,11 +4,11 @@ class SpotsController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
-    if params[:sort] == 'new_comments'
-      @spots = Spot.includes([:comments,:user]).order('comments.created_at DESC')
-    else
-      @spots = Spot.includes([:comments,:user]).order('created_at DESC')
-    end
+    @spots = if params[:sort] == 'new_comments'
+               Spot.includes([:comments, :user]).order('comments.created_at DESC')
+             else
+               Spot.includes([:comments, :user]).order('created_at DESC')
+             end
   end
 
   def new
@@ -18,20 +18,18 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     result = Geocoder.search(@spot.address).first
-  
+
     if result
       @spot.latitude = result.latitude
       @spot.longitude = result.longitude
     end
-  
+
     if @spot.save
       redirect_to root_path
+    elsif result
+      render :new, status: :unprocessable_entity
     else
-      if result
-        render :new, status: :unprocessable_entity
-      else
-        render :new, status: :unprocessable_entity
-      end
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -45,20 +43,18 @@ class SpotsController < ApplicationController
 
   def update
     result = Geocoder.search(@spot.address).first
-  
+
     if result
       @spot.latitude = result.latitude
       @spot.longitude = result.longitude
     end
-  
+
     if @spot.update(spot_params)
       redirect_to spot_path(@spot)
+    elsif result
+      render :edit, status: :unprocessable_entity
     else
-      if result
-        render :edit, status: :unprocessable_entity
-      else
-        render :edit, status: :unprocessable_entity
-      end
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -83,9 +79,8 @@ class SpotsController < ApplicationController
   end
 
   def move_to_index
-    unless current_user.id == @spot.user_id || current_user.admin?
-      redirect_to root_path
-    end
+    return if current_user.id == @spot.user_id || current_user.admin?
+
+    redirect_to root_path
   end
-  
 end

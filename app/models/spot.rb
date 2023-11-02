@@ -16,7 +16,7 @@ class Spot < ApplicationRecord
   has_many :tags, through: :spot_tags
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Spot.where('name LIKE(?)', "%#{search}%")
     else
       Spot.all
@@ -26,15 +26,14 @@ class Spot < ApplicationRecord
   private
 
   def geocode_if_address_changed
-    if will_save_change_to_address?
-      geocode
-    end
+    return unless will_save_change_to_address?
+
+    geocode
   end
 
   def geocode_must_be_present
-    if latitude.blank? || longitude.blank?
-      errors.add(:address, "は正しい情報を入力してください")
-    end
-  end
+    return unless latitude.blank? || longitude.blank?
 
+    errors.add(:address, 'は正しい情報を入力してください')
+  end
 end

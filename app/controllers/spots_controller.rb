@@ -5,9 +5,9 @@ class SpotsController < ApplicationController
 
   def index
     @spots = if params[:sort] == 'new_comments'
-               Spot.includes([:comments, :user]).order('comments.created_at DESC')
+               Spot.includes([:comments, :user]).order('comments.created_at DESC').page(params[:page]).per(10)
              else
-               Spot.includes([:comments, :user]).order('created_at DESC')
+               Spot.includes([:comments, :user]).order('created_at DESC').page(params[:page]).per(10)
              end
   end
 

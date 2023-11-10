@@ -492,6 +492,10 @@ a {
   background: #F99695;
 }
 
+.page {
+  text-align: center;
+}
+
 /* 検索 */
 .search-form {
   text-align: center;
